@@ -1,0 +1,20 @@
+<div class="header">
+  <div class="container">
+    <h1>threadly</h1>
+    <p>Note: Posting new comments has been disabled</p>
+  </div>
+</div>
+
+<div class="main">
+  <div class="container">
+    <%= form_for(@new_post) do |f| %>
+      <%= f.text_field :body %>
+      <%= f.submit "post", class: "btn" %>
+    <% end %>
+    <ul class="comments">
+      <% @all_posts.each do |p| %>
+      <li><%= p.body %></li>
+      <% end %>
+      </ul>
+  </div>
+</div>
