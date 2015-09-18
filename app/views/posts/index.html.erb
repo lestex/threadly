@@ -7,10 +7,12 @@
 
 <div class="main">
   <div class="container">
-    <%= form_for(@new_post) do |f| %>
-      <%= f.text_field :body %>
-      <%= f.submit "post", class: "btn" %>
-    <% end %>
+    <div class="twit-form">
+      <%= form_for(@new_post) do |f| %>
+        <%= f.text_field :body %>
+        <%= f.submit "post", class: "btn" %>
+      <% end %>
+    </div>
     <ul class="comments">
       <% @all_posts.each do |p| %>
       <li><%= p.body %></li>

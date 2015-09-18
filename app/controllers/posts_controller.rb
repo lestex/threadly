@@ -8,7 +8,6 @@ class PostsController < ApplicationController
     @new_post = Post.new(post_params)
     @new_post.save
     redirect_to root_path
-      
   end
   
   private 

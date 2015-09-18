@@ -59,8 +59,11 @@ h1 {
         width: 1170px
     }
 }
+.twit-form{
+    margin: 0 0 100px 0;
+}
 form {
-    margin: 0 0 100px 0
+    display:inline;
 }
 form input[type=text] {
     background: #f0f0f0;
