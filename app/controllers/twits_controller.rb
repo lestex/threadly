@@ -17,7 +17,7 @@ class TwitsController < ApplicationController
   def destroy
     @twit = Twit.find(params[:id])
     @twit.destroy
-    render json: @twit
+    head :no_content
   end
   
   private 
