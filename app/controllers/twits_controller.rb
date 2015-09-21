@@ -1,16 +1,23 @@
 class TwitsController < ApplicationController
 
   def index
-    @new_twit = Twit.new
     @all_twits = Twit.all
-    
     render :json => @all_twits
   end
 
   def create
-    @new_twit = Twit.new(twit_params)
-    @new_twit.save
-    redirect_to root_path
+    @twit = Twit.new(twit_params)
+    if @twit.save
+      render json: @twit
+    else
+      render json: @twit.errors, status: :unprocessable_entity
+    end
+  end
+  
+  def destroy
+    @twit = Twit.find(params[:id])
+    @twit.destroy
+    render json: @twit
   end
   
   private 

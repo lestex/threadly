@@ -1,4 +1,4 @@
 Rails.application.routes.draw do
   resources :posts, :twits
-  root 'pages#index'
+  root 'pages#jquery'
 end

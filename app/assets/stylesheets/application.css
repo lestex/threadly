@@ -74,6 +74,7 @@ form input[type=text] {
     padding: 20px;
     transition: background 2s, border-left 2s
 }
+
 form input[type=text]:focus {
     background: #fff;
     border-left: 2px solid #000;
@@ -97,17 +98,23 @@ button.btn:hover,
     color: #fff;
     transition: background 2s, color 1s
 }
+.disabled { 
+  cursor: default;
+  pointer-events: none;
+  color: #c0c0c0;
+  background-color: #ffffff;
+}
 ul {
-    list-style: none;
-    margin: 0;
-    padding: 0
+  list-style: none;
+  margin: 0;
+  padding: 0;
 }
 li {
-    border-left: 2px solid #000;
-    font-size: 36px;
-    margin: 0 0 36px;
-    opacity: 0;
-    padding-left: 20px
+  border-left: 2px solid #000;
+  font-size: 36px;
+  margin: 0 0 36px;
+  opacity: 0;
+  padding-left: 20px;
 }
 li:nth-child(1) {
     opacity: 1
@@ -138,6 +145,11 @@ li:nth-child(9) {
 }
 li:nth-child(10) {
     opacity: 0.1
+}
+
+ul li a{
+  text-decoration:none;
+  color:#000;
 }
 li:nth-child(11) {
     opacity: 0
