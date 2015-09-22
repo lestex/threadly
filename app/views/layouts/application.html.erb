@@ -2,11 +2,17 @@
 <html>
 <head>
   <title>Threadly</title>
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= stylesheet_link_tag    'application', media: 'all' %>
+  <%= javascript_include_tag 'application' %>
+  <%= javascript_include_tag 'jq' if action_name == 'jquery' %>
+  <%= javascript_include_tag 'ang' if action_name == 'angular' %>
   <%= csrf_meta_tags %>
 </head>
-<body>
+<% if action_name == 'angular' %>
+  <body ng-app="twitApp" ng-controller="twitController">
+<% else %>
+  <body>
+<% end %>
 
 <%= yield %>
 

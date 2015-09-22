@@ -1,3 +1,6 @@
+//= require jquery
+//= require jquery_ujs
+
 var main = function() {
   $('#submit').addClass('disabled');
   //get data from API then append to UL/li
