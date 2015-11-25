@@ -14,8 +14,8 @@
       </form>
       <a ng-class="{'disabled': twitForm.$invalid}" class="btn" id="submit" ng-click="click()" ng-disabled="twitForm.$invalid">post</a>
       </div>
-      <ul class="comments" ng-repeat="t in twits.slice().reverse()">
-        <li  id="{{t.id}}" ng-click="itemClick(t.id)">{{ t.body }}</li>
+      <ul class="comments">
+        <li ng-repeat="t in data.twits.slice()" id="{{t.id}}" ng-click="itemClick(t.id)">{{ t.body }}</li>
       </ul>
   </div>
 </div>
