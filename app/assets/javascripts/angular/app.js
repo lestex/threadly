@@ -12,13 +12,11 @@ app.controller('twitController', ['$scope', '$http', 'twitsFactory', function($s
   $scope.click = function() {
     var twit = { "twit": { "body": $scope.twit } };
     twitsFactory.addTwit(twit);
+    $scope.twit = null;
   }
  
   $scope.itemClick = function(id) {
-    var res = $http.delete('/twits/' + id);
-    res.success(function(data, status, headers, config) {
-        console.log(data);
-    });
+    twitsFactory.deleteTwit(id);
   }
 
 }]);

@@ -21,11 +21,31 @@ app.factory('twitsFactory', function($http){
         // success
         var newlyCreatedTwit = result.data;
         _twits.splice(0, 0, newlyCreatedTwit);
-        console.log(newlyCreatedTwit);
       },
       function(error) {
         // error
-        console.log(error);
+      });
+  };
+  
+  function findIndexByKeyValue(arraytosearch, key, valuetosearch) {
+    for (var i = 0; i < arraytosearch.length; i++) {
+      if (arraytosearch[i][key] == valuetosearch) {
+        return i;
+      }
+    }
+    return null;
+  };
+  
+  var _deleteTwit = function (twitId){
+   
+    $http.delete('/twits/' + twitId)
+      .then(function(result) {
+        // success
+        var index = findIndexByKeyValue(_twits, "id", twitId);
+        _twits.splice(index, 1);
+      },
+      function(error) {
+        // error
       });
   };
 
@@ -33,7 +53,8 @@ app.factory('twitsFactory', function($http){
   return {
     twits: _twits,
     getTwits: _getTwits,
-    addTwit: _addTwit
+    addTwit: _addTwit,
+    deleteTwit: _deleteTwit
   };
 });
 
