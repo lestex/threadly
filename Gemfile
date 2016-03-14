@@ -44,17 +44,19 @@ group :development do
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
   gem 'sqlite3'
-
-  gem 'capistrano', '~> 3.2.1'
-  gem 'capistrano-bundler', '~> 1.1.3'
-  gem 'capistrano-rails', '~> 1.1.2'
-  gem 'capistrano3-unicorn', '~> 0.2.1'
-  gem 'capistrano-rbenv', github: "capistrano/rbenv"
+   # Гем, который добавляет специфические для Rails таски, такие как прогон миграций и компиляция ассетов
+  gem 'capistrano-rails'
+  # Гем, добавляющий возможности bundle к capistrano
+  gem 'capistrano-bundler'
+  # Добавление поддержки Rbenv (менеджера версий для Ruby)
+  gem 'capistrano-rbenv'
+  # Интеграция пумы и капистрано
+  gem 'capistrano3-puma'
 end
 
 group :production do
 	gem 'pg'
 	gem 'rails_12factor'
-  gem 'unicorn'
+  gem 'puma'
 end
 
