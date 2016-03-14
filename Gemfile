@@ -45,15 +45,16 @@ group :development do
   gem 'spring'
   gem 'sqlite3'
 
-  gem 'capistrano', '~> 3.1.0'
-	gem 'capistrano-bundler'
-	gem 'capistrano-rails'
-	gem 'capistrano3-puma'
+  gem 'capistrano', '~> 3.2.1'
+  gem 'capistrano-bundler', '~> 1.1.3'
+  gem 'capistrano-rails', '~> 1.1.2'
+  gem 'capistrano3-unicorn', '~> 0.2.1'
+  gem 'capistrano-rbenv', github: "capistrano/rbenv"
 end
 
 group :production do
 	gem 'pg'
 	gem 'rails_12factor'
-  gem 'puma'
+  gem 'unicorn'
 end
 
