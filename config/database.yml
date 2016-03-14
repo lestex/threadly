@@ -1,7 +1,0 @@
-production:
-  database: threadly_production
-  adapter: postgresql
-  encoding: unicode
-  pool: 5
-  username: app
-  password: 8je3043ww3e
