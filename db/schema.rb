@@ -19,12 +19,6 @@ ActiveRecord::Schema.define(version: 20150917163220) do
     t.string   "body"
   end
 
-  create_table "tweets", force: :cascade do |t|
-    t.string   "body"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
   create_table "twits", force: :cascade do |t|
     t.string   "body"
     t.datetime "created_at", null: false
