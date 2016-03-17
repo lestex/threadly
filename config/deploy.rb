@@ -1,5 +1,8 @@
 set :application, 'threadly'
 set :repo_url, 'https://github.com/lestex/threadly.git'
+set :branch, 'master'
+
+set :deploy_user, 'deploy'
 
 set :rbenv_type, :user
 set :rbenv_ruby, '2.3.0'
@@ -54,4 +57,15 @@ set(:symlinks, [
 ])
 
 namespace :deploy do
+  
+  # copy config files to server
+  before :deploy, 'deploy:setup_config'
+
+  # remove default virtual host nginx
+  before 'deploy:setup_config', 'nginx:remove_default_vhost'
+
+  after 'deploy:setup_config', 'nginx:reload'
+
+  after :deploy, 'unicorn:restart'
+
 end

@@ -5,7 +5,7 @@ var app = angular.module('twitApp', []);
 app.controller('twitController', ['$scope', '$http', 'twitsFactory', function($scope, $http, twitsFactory){
   $scope.title = "threadly";
   $scope.subheader = "Twitter clone written in Rails and Angular";
-  $scope.data = twitsFactory;
+  $scope.data = twitsFactory;  
   
   twitsFactory.getTwits();
   
