@@ -15,8 +15,6 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
-gem 'unicorn'
-
 group :development, :test do
   gem 'byebug'
 end
@@ -25,18 +23,12 @@ group :development do
   # Access an IRB console on exception pages or by using <%= console %> in views
   gem 'web-console', '~> 2.0'
   gem 'spring'
-  gem 'sqlite3'
-  gem 'capistrano'
-  gem 'capistrano-rails'
-  gem 'capistrano-bundler'
-  gem 'capistrano-rbenv'
-  #gem 'capistrano-cookbook'#, require: false
-  #gem 'capistrano3-unicorn'
-  #gem 'capistrano-nginx-unicorn'
+  gem 'sqlite3'  
 end
 
 group :production do
 	gem 'pg'
-	gem 'rails_12factor'  
+	gem 'rails_12factor'
+  gem 'unicorn'
 end
 
