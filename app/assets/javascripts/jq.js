@@ -22,29 +22,21 @@ var main = function() {
   
   // hande POST button
   $('#submit').click(function(){
-    
     var twit = $('#input-text').val();
-    if (twit === '') {
-      alert("body must not be empty")
-    }
-    else {
-      $('#submit').removeClass('disabled');
-    // append to <li>
-      $('<li>').text(twit).prependTo('.comments');
-      $('li').addClass('item');
-    // save to backend
-      $.ajax({
-        url: "/twits",
-        type: "POST",
-        data: { "twit": { "body": twit } },
-        success: function(resp){ //console.log(resp)
-        }
-      });
+    $('#submit').removeClass('disabled');
+    $('<li>').text(twit).prependTo('.comments');
+    $('li').addClass('item');
+    $.ajax({
+      url: "/twits",
+      type: "POST",
+      data: { "twit": { "body": twit } },
+      success: function(resp){ //console.log(resp)
+      }
+    });
       //clear the input
-      $('#input-text').val('');
+    $('#input-text').val('');
       // set the POST button class to disabled
-      $('#submit').addClass('disabled');
-    }
+    $('#submit').addClass('disabled');    
   });
   
   // check if input val is not empty
@@ -63,7 +55,8 @@ var main = function() {
 // get all twits from API GET '/twits'
 function getAllTwits() {
 $.getJSON( "/twits", function(data){
-  	data.forEach(function(entry) {
+    console.log(data)
+  	data.reverse().forEach(function(entry) {
       $('<li>').text(entry.body).addClass('item').attr('id', entry.id).prependTo('.comments');
     });
   });
