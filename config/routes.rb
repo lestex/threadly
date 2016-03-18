@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  resources :posts, :twits
+  resources :twits
   get 'jquery' => 'pages#jquery'
   get 'posts' => 'posts#index'
   get '*path' => 'pages#angular'
