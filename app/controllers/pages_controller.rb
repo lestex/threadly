@@ -4,4 +4,7 @@ class PagesController < ApplicationController
 
   def angular
   end
+  
+  def react
+  end
 end

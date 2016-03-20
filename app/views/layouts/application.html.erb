@@ -6,6 +6,7 @@
   <%= javascript_include_tag 'application' %>
   <%= javascript_include_tag 'jq' if action_name == 'jquery' %>
   <%= javascript_include_tag 'ang' if action_name == 'angular' %>
+  <%= javascript_include_tag 'react' if action_name == 'react' %>
   <%= csrf_meta_tags %>
 </head>
 <% if action_name == 'angular' %>
