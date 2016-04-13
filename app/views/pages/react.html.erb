@@ -1,1 +1,21 @@
-<h1>React</h1>
+<div class="header">
+  <div class="container">
+    <h1>Threadly</h1>
+    <p>twitter colne</p>
+  </div>
+</div>
+
+<div class="main">
+  <div class="container">
+    <div class="twit-form">
+      <div class="twit-form">
+      <form name='twitForm'>
+        <input type="text" ng-model="twit" name="body" id="input-text" required>
+      </form>
+      <a ng-class="{'disabled': twitForm.$invalid}" class="btn" id="submit" ng-click="click()" ng-disabled="twitForm.$invalid">post</a>
+      </div>
+      <ul class="comments">
+        <li ng-repeat="t in data.twits.slice()" id="{{t.id}}" ng-click="itemClick(t.id)">{{ t.body }}</li>
+      </ul>
+  </div>
+</div>

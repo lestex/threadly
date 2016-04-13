@@ -1,0 +1,21 @@
+postgres:
+  image: postgres:9.4.5
+  environment:
+    POSTGRES_USER: threadly
+    POSTGRES_PASSWORD: threadly
+  ports:
+    - '5432:5432'
+  volumes:
+    - ~/.docker-volumes/threadly/postgresql/data:/var/lib/postgresql/data
+    
+threadly:
+  build: .
+  links:
+    - postgres
+  volumes:
+    - .:/threadly
+  ports:
+    - '8000:8000'
+  env_file:
+    - .threadly.env
+
