@@ -1,0 +1,17 @@
+version: '2'
+services:
+  threadly:
+    ports:
+      - "3000"
+    environment:
+      RAILS_ENV: production
+
+  nginx:
+    build: ./nginx
+    ports:
+      - '80:80'
+      - '443:443'
+    volumes_from:
+      - threadly
+    depends_on:
+      - threadly

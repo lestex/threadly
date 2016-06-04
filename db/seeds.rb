@@ -5,3 +5,8 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+
+
+1...10.times do |t|
+	Twit.create! body: 'This is the ' + t.to_s + ' twit!'
+end
