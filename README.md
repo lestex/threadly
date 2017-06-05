@@ -1,6 +1,6 @@
 == README
 
-This a simple RAILS app with Jquery and Angular as a frontand.
+This a simple RAILS app with Jquery and Angular as a frontend.
 
 == How it works:
 
