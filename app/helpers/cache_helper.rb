@@ -1,3 +1,4 @@
+# top level comment
 module CacheHelper
   def get_twits_from_cache
     twits = $redis.get('twits')
@@ -5,7 +6,7 @@ module CacheHelper
       twits = Twit.all.reverse.to_json
       $redis.set('twits', twits)
     end
-    @twits = JSON.load twits
+    @twits = JSON.parse twits
   end
   
   def update_twits_in_cache

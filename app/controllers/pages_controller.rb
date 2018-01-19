@@ -1,10 +1,7 @@
 class PagesController < ApplicationController
-  def jquery
-  end
+  def jquery; end
 
-  def angular
-  end
-  
-  def react
-  end
+  def angular; end
+
+  def react; end
 end

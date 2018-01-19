@@ -3,7 +3,7 @@ class TwitsController < ApplicationController
 
   def index
     @all_twits = get_twits_from_cache
-    #@all_twits = Twit.all.reverse
+    # @all_twits = Twit.all.reverse
     render json: @all_twits
   end
 
